@@ -1,0 +1,2 @@
+DEFINE_NEAR_METHOD(get_scores)
+DEFINE_NEAR_METHOD(set_score)
