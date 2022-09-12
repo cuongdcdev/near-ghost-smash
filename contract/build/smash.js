@@ -560,6 +560,12 @@ let ScoreBoard = (_dec = NearBindgen({}), _dec2 = call({}), _dec3 = view({}), _d
     score
   }) {
     let name = predecessorAccountId();
+
+    if (currentAccountId() != name) {
+      log("Only contract can do this");
+      return;
+    }
+
     const s = new Score({
       name,
       score

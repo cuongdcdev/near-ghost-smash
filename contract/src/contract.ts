@@ -8,6 +8,12 @@ class ScoreBoard {
   @call({})
   set_score({ score }) {
     let name = near.predecessorAccountId();
+
+    if( near.currentAccountId() != name ){
+      near.log( "Only contract can do this" );
+      return;
+    }
+
     const s = new Score({ name, score });
     //only allow top 6 best players 
     if (this.scores.length < 6) {
